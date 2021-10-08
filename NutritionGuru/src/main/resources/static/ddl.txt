@@ -1,0 +1,34 @@
+CREATE DATABASE IF NOT EXISTS `nutrition`;
+
+
+CREATE TABLE `diet_master_history` (
+  `dite_history_id` int NOT NULL,
+  `dm_diet_item1` varchar(100) DEFAULT NULL,
+  `dm_diet_item2` varchar(100) DEFAULT NULL,
+  `dm_diet_item3` varchar(100) DEFAULT NULL,
+  `dm_diet_item4` varchar(100) DEFAULT NULL,
+  `dm_diet_item5` varchar(100) DEFAULT NULL,
+  `dm_calories_in_diet` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`dite_history_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `weight_gain_diet_category` (
+  `wg_diet_id` int NOT NULL,
+  `wg_calories_intake_date` date DEFAULT NULL,
+  `wg_food_intake_category` varchar(50) DEFAULT NULL,
+  `wg_user_name` varchar(100) DEFAULT NULL,
+  `wg_diet_master_id` int DEFAULT NULL,
+  PRIMARY KEY (`wg_diet_id`),
+  KEY `FKby41lry49ois47mutyypq0c6l` (`wg_diet_master_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `weight_loss_diet_category` (
+  `wl_diet_id` int NOT NULL,
+  `wl_calories_intake_date` date DEFAULT NULL,
+  `wl_diet_intake_category` varchar(50) DEFAULT NULL,
+  `wl_user_name` varchar(100) DEFAULT NULL,
+  `wl_diet_master_id` int DEFAULT NULL,
+  PRIMARY KEY (`wl_diet_id`),
+  KEY `FKgp40j0t9n90cmiwh0b9xraed4` (`wl_diet_master_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
