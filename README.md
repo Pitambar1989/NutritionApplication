@@ -1,2 +1,1 @@
-# NutritionApplication
-AXA Assignment Project
+# NutritionGuru
